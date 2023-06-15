@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package apartment;
+
+service ApartmentService {
+  rpc GetAvailableApartments(GetAvailableApartmentsRequest) returns (GetAvailableApartmentsResponse) {}
+}
+
+message GetAvailableApartmentsRequest {
+  string city = 1;
+}
+
+message GetAvailableApartmentsResponse {
+  repeated Apartment apartments = 1;
+}
+
+message Apartment {
+  string id = 1;
+  string city = 2;
+  string room = 3;
+}
